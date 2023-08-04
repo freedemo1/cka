@@ -1,0 +1,18 @@
+Master and Worker Node --
+
+----- > git clone https://github.com/sandervanvugt/cka
+----- > cka/setup-container.sh
+----- > cka/setup-kubetools.sh
+
+Master Node Only
+
+----- > sudo kubeadm init
+
+----- > mkdir -p $HOME/.kube
+----- > sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+----- > sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+----- > kubectl apply -f cka/calico.yaml
+----- > kubectl get nodes
+----- > alias k=kubectl
+----- > k get nodes
